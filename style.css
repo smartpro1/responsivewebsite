@@ -1,0 +1,416 @@
+*,
+*::before,
+*::after{
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	background: #fff;
+	 font-family: "Open-sans", sans-serif;
+	font-weight: 400;
+	font-size: 1.6rem;
+	line-height: 1.7;
+	box-sizing: border-box;
+}
+
+
+/* HEADER */
+
+#menu-checkbox{
+	display: none;
+}
+
+
+#hamburger-btn,
+#hamburger-btn::before,
+#hamburger-btn::after{
+	position: absolute;
+	width: 30px;
+	height: 2.5px;
+	background: #000;
+	transition: 0.6s;
+}
+
+#hamburger-btn{
+	cursor: pointer;
+	top: 50%;
+	right: 40px;
+}
+
+#hamburger-btn::before{
+	content: "";
+	transform: translateY(-8px);
+	
+}
+
+#hamburger-btn::after{
+	content: "";
+	transform: translateY(8px);
+}
+
+#menu-checkbox:checked + #hamburger-btn{
+	width: 0;
+	margin-right: 40px;
+}
+
+#menu-checkbox:checked + #hamburger-btn::before{
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+#menu-checkbox:checked + #hamburger-btn::after{
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+#hamburger-btn{
+	display: none;
+}
+
+
+
+#brand{
+	display: block;
+	text-decoration: none;
+	margin-left: 2rem;
+	color: coral;
+	font-weight: bold;
+}
+
+#brand:hover{
+	opacity: 0.8;
+}
+
+nav{
+	display: flex;
+	justify-content: space-between;
+	height: 6rem;
+	border: 1px solid #ddd;
+	align-items: center;
+	position: relative;
+}
+
+nav ul{
+	display: flex;
+	justify-content: space-between;
+	margin-right: 2rem;
+}
+
+nav ul li{
+	list-style: none;
+	padding: 2rem;
+}
+
+nav ul li a{
+	text-decoration: none;
+	color: #000;
+}
+
+a.current{
+	padding-bottom: .3rem;
+	border-bottom: .5rem solid coral;
+}
+
+
+nav ul li a:hover{
+	color: coral;
+	border-bottom: .5rem solid coral;
+	padding-bottom: .3rem;
+}
+
+
+#home_background{
+	height: 60vh;
+	position: relative;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/bg.jpg');
+	background-size: cover;
+	background-position: 100px;
+}
+
+
+#background_center{
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	color: #fff;
+	text-align: center;
+}
+
+#background_center h4{
+	letter-spacing: 0.3rem;
+}
+
+#background_center a{
+  display: inline-block;
+  color: white;
+  width: 20rem;
+  padding: 1rem 1.5rem;
+  border-radius: 5rem;
+  outline: none;
+  border: 1px solid coral;
+  margin-top: 1.5rem;
+  background: coral;
+  cursor: pointer;
+}
+
+#background_center a:hover{
+	background: transparent;
+}
+
+/* SECTION */
+
+section{
+  margin: 10rem 0;
+  padding: 5rem 3rem;
+}
+
+/*SECTION description*/
+section#description{
+  display: flex;
+  background: #EFEEEA;
+  justify-content: space-evenly;
+}
+
+#description_div{
+	text-align: center;
+	flex-basis: 28%;
+	justify-content: center;
+}
+
+i.fa.fa-android,i.fa.fa-apple, i.fa.fa-bitcoin{
+	font-size: 4.8rem;
+	color: coral;
+}
+
+#description_div h4{
+	padding: 2rem 0;
+	font-weight: bold;
+}
+
+/*SECTION details*/
+
+section#details{
+	background:#87CEFA;
+}
+
+#details h2{
+	text-align: center;
+	padding-bottom: 3rem;
+}
+
+#details h3{
+	margin: 1.5rem 0;
+}
+
+#details_wrapper{
+	display: flex;
+	justify-content: space-around;
+}
+
+
+.details_description{
+	width: 40%;
+}
+
+.details_description img{
+	width: 100%;
+	height: 100%;
+}
+
+
+
+
+
+/* FOOTER*/
+#footer{
+	margin-top: 10rem;
+	background: #000;
+    color: white;
+    padding: 3rem;
+    opacity: 0.8;
+}
+
+#footer h3{
+	color: coral;
+	text-align: center;
+	margin-bottom: 3rem;
+	text-transform: uppercase;
+}
+
+#footer_wrapper{
+  display: flex;
+  justify-content: space-around;
+    
+}
+
+#footer h3:hover{
+	opacity: 0.8;
+}
+
+
+.footer_content{
+	width: 40%;
+	display: flex;
+	justify-content: space-between;
+	border-top: 1px solid #87CEFA;
+	padding-top: 2rem;
+}
+
+.footer_content li{
+	list-style: none;
+}
+
+.footer_content a{
+	text-decoration: none;
+	color: #fff;
+}
+
+.footer_content a:hover{
+	color: coral;
+}
+
+
+@media only screen and (max-width: 54.4em){  /*869px/16*/
+   html{
+   	font-size: 56.25%;
+   }
+
+  #details h2{
+	text-align: center;
+	padding-bottom: 3rem;
+}
+
+#details h3{
+	margin: 1.5rem 0;
+}
+
+#details_wrapper{
+	display: block;
+}
+
+
+.details_description{
+	width: 100%;
+}
+
+.details_description img{
+	width: 100%;
+	margin-top: 4rem;
+}
+}
+
+
+@media only screen and (max-width: 50.3em){
+	html{
+   	font-size: 50%;
+   }
+
+   #footer_wrapper{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;    
+}
+
+
+.footer_content{
+	width: 85%;
+  }
+
+#footer_wrapper ul{
+	padding-bottom: 2rem;
+}
+}
+
+
+@media only screen and (max-width: 43.7em){
+	#hamburger-btn{
+	display: block;
+   }
+
+	nav ul{
+		display: none;
+	}
+
+	#menu-checkbox:checked ~  ul{
+		display: block;
+		background: gray;
+		width: 200px;
+		z-index: 10;
+		padding: 20px;
+		position: absolute;
+		top: 6rem;
+		right: -20px;
+		text-align: center;
+	}
+
+	#menu-checkbox:checked ~  ul li a{
+	color: #fff;
+    }
+
+	section#description{
+		flex-direction: column;
+	}
+
+	#background_center h1{
+		font-size: 2.5rem;
+	}
+
+	#background_center h4{
+		font-size: 1.5rem;
+		letter-spacing: 0.2rem;
+	}
+
+	#background_center a{
+		width: 12rem;
+	}
+
+	i.fa.fa-apple, i.fa.fa-bitcoin{
+		padding-top: 2rem;
+	}
+
+
+}
+
+
+@media only screen and (max-width: 35.4em){
+  #background_center h4{
+  	display: none;
+  }
+
+  #details h2{
+  	font-size: 2.1rem;
+  }
+
+  #details h4{
+  	font-size: 1.5rem;
+  }
+}
+
+
+@media only screen and (max-width: 35.4em){
+	#background_center h1{
+		font-size: 2.3rem;
+	}
+
+	#details h2{
+  	font-size: 2rem;
+  }
+
+  #details h4{
+  	font-size: 1.4rem;
+  }
+
+  #background_center a{
+		width: 11rem;
+	}
+}
+
+
+
